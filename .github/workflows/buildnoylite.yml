@@ -1,4 +1,4 @@
-name: Build IPA with iSponsorBlock (no YTLite)
+name: Build IPA (no YouPro/YTLite)
 
 on:
   workflow_dispatch:
