@@ -118,7 +118,6 @@ jobs:
           gonerino_commit: ${{ steps.commit_hashes.outputs.gonerino }}
           ytweaks_commit: ${{ steps.commit_hashes.outputs.ytweaks }}
           yougetcaption_commit: ${{ steps.commit_hashes.outputs.yougetcaption }}
-          ytflags_commit: ${{ steps.commit_hashes.outputs.ytflags }}
           iamyoutube_commit: ${{ steps.commit_hashes.outputs.iamyoutube }}
           isponsorblock_commit: ${{ steps.commit_hashes.outputs.isponsorblock }}
           demc_commit: ${{ steps.commit_hashes.outputs.demc }}
@@ -259,13 +258,6 @@ jobs:
           git clone --quiet --depth=1 https://github.com/PoomSmart/YouGetCaption.git
           cd YouGetCaption && make clean package DEBUG=0 FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
           mv packages/*.deb ${{ github.workspace }}/ygc.deb
-
-      - name: Clone and Build YTFlags
-        if: steps.cache_tweaks.outputs.cache_ytflags_hit != 'true'
-        run: |
-          git clone --quiet --depth=1 https://github.com/Tonwalter888/YTFlags.git
-          cd YTFlags && make clean package DEBUG=0 FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
-          mv packages/*.deb ${{ github.workspace }}/ytflags.deb
 
       - name: Clone and Build IAmYouTube
         if: steps.cache_tweaks.outputs.cache_iamyoutube_hit != 'true'

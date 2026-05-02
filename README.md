@@ -1,27 +1,21 @@
 # YouProEXTRA
-
-### YouPro tweak provided by [@Alibusut](https://t.me/alibusut)
-
-### EDIT: force Sync fork before building. Important!
-
-### EDIT: YOU CAN NOW BUILD YTLite 5.2.1/YTKillerPlus 5.0 with any YT version and optional tweaks.
+YouTube IPA builder packed with customizable tweaks.
 
 ## Main features
-- [YouPro](https://t.me/alibusut) - eg. Download Videos, No ads, Background Playback
-- [YTLite](https://github.com/dayanch96/YTLite) - YoutubePlus tweak
-- [YTKillerPlus](https://repo.ikghd.me/depictions/?p=me.ikghd.ytkplus) - YTKillerPlus tweak
-- [YTUHD](https://github.com/Tonwalter888/YTUHD) - Enables 4K streaming with 60pHDR capability 
-- [YouMute](https://github.com/PoomSmart/YouMute) - Mute the video sounds in video overlay
-- [YouSpeed](https://github.com/PoomSmart/YouSpeed) - Change video speeds in video overlay
-- [YTABConfig](https://github.com/PoomSmart/YTABConfig) - Configures A/B settings
-- [iSponsorBlock](https://github.com/Galactic-Dev/iSponsorBlock) - Block Sponsorship 
-- [YouChooseQuality](https://github.com/PoomSmart/YouChooseQuality) - Auto select the video quality from your scenario
-- [YouSlider](https://github.com/PoomSmart/YouSlider) - Customizes iOS YouTube video slider and scrubber. 
-- [YouShare](https://github.com/Tonwalter888/YouShare) - Copy video URL faster from video overlay
+- **[YouPro](https://t.me/alibusut)** - Basic Youtube Premium features; Download Videos, No ads, Background Playback.
+- **[YoutubePlus/YTLite](https://github.com/dayanch96/YTLite)** - A flexible enhancer for YouTube on iOS, featuring over hundred customizable options.
+- **[YTKillerPlus](https://repo.ikghd.me/depictions/?p=me.ikghd.ytkplus)** - Alternative Youtube tweak with more custiomized options.
+- [YTUHD](https://github.com/Tonwalter888/YTUHD) - Unlocks 1440p and 2160p resolutions in iOS YouTube app.
+- [YouMute](https://github.com/PoomSmart/YouMute) - Mutes/unmutes videos on iOS YouTube app faster.
+- [YouSpeed](https://github.com/PoomSmart/YouSpeed) - Views/changes video speed in iOS YouTube app faster.
+- [YTABConfig](https://github.com/PoomSmart/YTABConfig) - Configures A/B settings in iOS YouTube app.
+- [iSponsorBlock](https://github.com/Galactic-Dev/iSponsorBlock) - Skip sponsorships in youtube videos.
+- [YouChooseQuality](https://github.com/PoomSmart/YouChooseQuality) - Auto-selects the video quality of choice in iOS YouTube app.
+- [YouSlider](https://github.com/PoomSmart/YouSlider) - Customizes iOS YouTube video slider and scrubber.
+- [YouShare](https://github.com/Tonwalter888/YouShare) - Allowing you to Share Videos faster in iOS YouTube app.
 - [Gonerino](https://github.com/castdrian/Gonerino) - Filter videos/channels/keywords that you don't want them to show up on your feeds
-- [YouGetCaption](https://github.com/PoomSmart/YouGetCaption) - Copy video captions from video overlay
-- [YTweaks](https://github.com/fosterbarnes/YTweaks) - Hide AI summary,Fix casting and more
-- [YTFlags](https://github.com/Tonwalter888/YTFlags) - Tries to make your YouTube experience even better
+- [YouGetCaption](https://github.com/PoomSmart/YouGetCaption) - Views and copies caption from YouTube videos. 
+- [YTweaks](https://github.com/fosterbarnes/YTweaks) - Various tweaks for the iOS YouTube app.
 
 ## How to build a YouProEXTRA IPA using Github Actions
 > [!NOTE]
@@ -34,7 +28,7 @@
   <summary>How to build a YouProEXTRA IPA</summary>
   <ol>
     <li>Click on <strong>Sync fork</strong>, and if your branch is out-of-date, click on <strong>Update branch</strong>.</li>
-    <li>Navigate to <strong>Actions</strong> in your forked repository and select <strong>Build YouPro IPA.</strong></li>
+    <li>Navigate to <strong>Actions</strong> in your forked repository and select <strong>Build YouPro/YTLite/YTKillerPlus IPA.</strong></li>
     <li>Click the <strong>Run workflow</strong> button located on the right side.</li>
     <li>Get a decrypted .ipa file (I cannot provide this due to legal reasons.), then upload it to a file provider (e.g., filebin.net,filemail.com,catbox.moe or Dropbox is recommended). Paste the URL of the decrypted IPA file in the provided field.</li>
     <strong>NOTE:</strong> Make sure to provide a direct download link to the file, not a link to a webpage. Otherwise, the process will fail.
@@ -48,7 +42,7 @@
   <summary>How to build a YouProEXTRA IPA (With your own .deb file)</summary>
   <ol>
     <li>Click on <strong>Sync fork</strong>, and if your branch is out-of-date, click on <strong>Update branch</strong>.</li>
-    <li>Navigate to <strong>Actions</strong> in your forked repository and select <strong>Build IPA with iSponsorBlock (Custom .deb).</strong></li>
+    <li>Navigate to <strong>Actions</strong> in your forked repository and select <strong>Build IPA with Custom .deb tweak</strong></li>
     <li>Click the <strong>Run workflow</strong> button located on the right side.</li>
     <li>Get a decrypted .ipa file (I cannot provide this due to legal reasons.), then upload it to a file provider (e.g., filebin.net,filemail.com,catbox.moe or Dropbox is recommended). Paste the URL of the decrypted IPA file in the provided field.</li>
     <li>Get your Custom .deb file, then upload it to a file provider (e.g., filebin.net, catbox.moe, or Dropbox is recommended). Paste the URL of the deb file in the provided field.</li>

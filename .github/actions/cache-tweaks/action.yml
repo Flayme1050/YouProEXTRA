@@ -80,9 +80,6 @@ inputs:
   yougetcaption_commit:
     required: false
     default: ''
-  ytflags_commit:
-    required: false
-    default: ''
   iamyoutube_commit:
     required: false
     default: ''
@@ -115,7 +112,6 @@ outputs:
   cache_gonerino_hit:      { value: "${{ steps.cache_gonerino.outputs.cache-hit }}" }
   cache_ytweaks_hit:       { value: "${{ steps.cache_ytweaks.outputs.cache-hit }}" }
   cache_yougetcaption_hit: { value: "${{ steps.cache_yougetcaption.outputs.cache-hit }}" }
-  cache_ytflags_hit:       { value: "${{ steps.cache_ytflags.outputs.cache-hit }}" }
   cache_iamyoutube_hit:    { value: "${{ steps.cache_iamyoutube.outputs.cache-hit }}" }
   cache_isponsorblock_hit: { value: "${{ steps.cache_isponsorblock.outputs.cache-hit }}" }
   cache_demc_hit:          { value: "${{ steps.cache_demc.outputs.cache-hit }}" }
@@ -238,12 +234,6 @@ runs:
       with:
         path: ${{ github.workspace }}/ygc.deb
         key: yougetcaption-${{ inputs.yougetcaption_commit }}-sdk${{ inputs.sdk_version }}
-
-    - uses: actions/cache@v4
-      id: cache_ytflags
-      with:
-        path: ${{ github.workspace }}/ytflags.deb
-        key: ytflags-${{ inputs.ytflags_commit }}-sdk${{ inputs.sdk_version }}
 
     - uses: actions/cache@v4
       id: cache_iamyoutube

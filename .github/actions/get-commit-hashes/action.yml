@@ -70,9 +70,6 @@ outputs:
   yougetcaption:
     description: YouGetCaption commit hash
     value: ${{ steps.hashes.outputs.yougetcaption }}
-  ytflags:
-    description: YTFlags commit hash
-    value: ${{ steps.hashes.outputs.ytflags }}
   iamyoutube:
     description: IAmYouTube commit hash
     value: ${{ steps.hashes.outputs.iamyoutube }}
@@ -116,7 +113,6 @@ runs:
         echo "gonerino=$(get_hash castdrian/Gonerino)"                               >> $GITHUB_OUTPUT
         echo "ytweaks=$(get_hash fosterbarnes/YTweaks)"                              >> $GITHUB_OUTPUT
         echo "yougetcaption=$(get_hash PoomSmart/YouGetCaption)"                     >> $GITHUB_OUTPUT
-        echo "ytflags=$(get_hash Tonwalter888/YTFlags)"                              >> $GITHUB_OUTPUT
         echo "iamyoutube=$(get_hash PoomSmart/IAmYouTube)"                           >> $GITHUB_OUTPUT
  
         if [ "${{ inputs.isponsorblock }}" = "true" ]; then
