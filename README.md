@@ -2,8 +2,8 @@
 
 ### YouPro tweak provided by [@Alibusut](https://t.me/alibusut)
 
-## EDIT: force Sync fork before building
-## EDIT: YOU CAN NOW BUILD YTLite 5.2.1 with any YT version. and add custom .deb file.
+### EDIT: force Sync fork before building
+### EDIT: YOU CAN NOW BUILD YTLite 5.2.1 with any YT version and optional tweaks.
 
 ## Main features
 - [YouPro](https://t.me/alibusut) - eg. Download Videos, No ads, Background Playback
