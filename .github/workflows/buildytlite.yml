@@ -288,7 +288,7 @@ jobs:
         if: inputs.volumeboost == true && steps.cache_tweaks.outputs.cache_volumeboost_hit != 'true'
         run: |
           git clone --quiet --depth=1 https://github.com/VasirakCalgux/VolumeBoostYT.git
-          cd VolumeBoostYT && make clean package DEBUG=0 FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
+          cd VolumeBoostYT && make clean package DEBUG=0 FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless ARCHS=arm64
           mv packages/*.deb ${{ github.workspace }}/volumeboost.deb
 
       - name: Inject Tweaks Into IPA
