@@ -8,16 +8,17 @@ inputs:
   demc:
     required: false
     default: 'false'
-  ytvid:
-    required: false
-    default: 'false'
   ythold:
     required: false
     default: 'false'
   volumeboost:
     required: false
-    default: 'false'  
- 
+    default: 'false'
+    
+  nativeshare:
+    required: false
+    default: 'false'
+    
 outputs:
   theos:
     description: Theos commit hash
@@ -93,7 +94,10 @@ outputs:
     value: ${{ steps.hashes.outputs.ythold }}
   volumeboost:
     description: VolumeBoostYT commit hash
-    value: ${{ steps.hashes.outputs.volumeboost }}  
+    value: ${{ steps.hashes.outputs.volumeboost }}
+  nativeshare:
+    description: youtube-native-share commit hash
+    value: ${{ steps.hashes.outputs.nativeshare }}
  
 runs:
   using: composite
@@ -126,6 +130,7 @@ runs:
         echo "ytweaks=$(get_hash fosterbarnes/YTweaks)"                              >> $GITHUB_OUTPUT
         echo "yougetcaption=$(get_hash PoomSmart/YouGetCaption)"                     >> $GITHUB_OUTPUT
         echo "iamyoutube=$(get_hash PoomSmart/IAmYouTube)"                           >> $GITHUB_OUTPUT
+        echo "ytvid=$(get_hash PoomSmart/YTVideoErrorAlert)"                         >> $GITHUB_OUTPUT
  
         if [ "${{ inputs.isponsorblock }}" = "true" ]; then
           echo "isponsorblock=$(get_hash Galactic-Dev/iSponsorBlock)"                >> $GITHUB_OUTPUT
@@ -139,12 +144,6 @@ runs:
           echo "demc=disabled"                                                       >> $GITHUB_OUTPUT
         fi
  
-        if [ "${{ inputs.ytvid }}" = "true" ]; then
-          echo "ytvid=$(get_hash PoomSmart/YTVideoErrorAlert)"                       >> $GITHUB_OUTPUT
-        else
-          echo "ytvid=disabled"                                                      >> $GITHUB_OUTPUT
-        fi
-        
         if [ "${{ inputs.ythold }}" = "true" ]; then
           echo "ythold=$(get_hash joshuaseltzer/YTHoldForSpeed)"                     >> $GITHUB_OUTPUT
         else
@@ -155,4 +154,10 @@ runs:
           echo "volumeboost=$(get_hash VasirakCalgux/VolumeBoostYT)"                 >> $GITHUB_OUTPUT
         else
           echo "volumeboost=disabled"                                                >> $GITHUB_OUTPUT
+        fi
+        
+        if [ "${{ inputs.nativeshare }}" = "true" ]; then
+          echo "nativeshare=$(get_hash jkhsjdhjs/youtube-native-share)"              >> $GITHUB_OUTPUT
+        else
+          echo "nativeshare=disabled"                                                >> $GITHUB_OUTPUT
         fi

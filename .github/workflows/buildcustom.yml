@@ -1,4 +1,4 @@
-name: Build IPA with Custom .deb tweak
+name: (Pre-Release) Build IPA with Custom tweak
 
 on:
   workflow_dispatch:
@@ -33,12 +33,6 @@ on:
         required: false
         type: boolean
 
-      ytvid:
-        description: "Integrate YTVideoErrorAlert"
-        default: true
-        required: false
-        type: boolean
-
       isponsorblock:
         description: "Integrate iSponsorBlock"
         default: true
@@ -55,7 +49,13 @@ on:
         description: "Integrate VolumeBoostYT"
         default: false
         required: false
-        type: boolean  
+        type: boolean
+        
+      nativeshare:
+        description: "Integrate YTNativeShare"
+        default: false
+        required: false
+        type: boolean
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -67,13 +67,13 @@ jobs:
     with:
       isponsorblock: ${{ inputs.isponsorblock }}
       demc: ${{ inputs.demc }}
-      ytvid: ${{ inputs.ytvid }}
       ythold: ${{ inputs.ythold }}
       volumeboost: ${{ inputs.volumeboost }}
+      nativeshare: ${{ inputs.nativeshare }}
       youpro: false
 
   package:
-    name: Package IPA
+    name: Build IPA with Custom tweak
     runs-on: macos-latest
     needs: build-tweaks
     permissions:
@@ -89,7 +89,7 @@ jobs:
       - name: Hide Sensitive Inputs
         uses: levibostian/action-hide-sensitive-inputs@v1
         with:
-          exclude_inputs: bundle_id,display_name,demc,ytvid,isponsorblock,ythold,volumeboost
+          exclude_inputs: bundle_id,display_name,demc,isponsorblock,ythold,volumeboost,nativeshare
 
       - name: Download and Validate IPA
         run: |
@@ -158,7 +158,7 @@ jobs:
           draft: true
 
       - name: Job Summary - Build Complete
-        run: echo -e '### 🛠️ Build IPA with Custom .deb Complete!' >> $GITHUB_STEP_SUMMARY
+        run: echo -e '### 🛠️ Build IPA with Custom tweak Complete!' >> $GITHUB_STEP_SUMMARY
 
       - name: Job Summary - Output the Draft Release Link
         run: |

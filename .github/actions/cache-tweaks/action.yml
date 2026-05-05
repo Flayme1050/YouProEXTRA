@@ -25,13 +25,13 @@ inputs:
   demc:
     required: false
     default: 'false'
-  ytvid:
-    required: false
-    default: 'false'
   ythold:
     required: false
     default: 'false'
   volumeboost:
+    required: false
+    default: 'false'
+  nativeshare:
     required: false
     default: 'false'
   theos_commit:
@@ -101,6 +101,9 @@ inputs:
   volumeboost_commit:
     required: false
     default: 'disabled'  
+  nativeshare_commit:
+    required: false
+    default: 'disabled'  
 
 outputs:
   cache_youpip_hit:        { value: "${{ steps.cache_youpip.outputs.cache-hit }}" }
@@ -127,6 +130,7 @@ outputs:
   cache_ytvid_hit:         { value: "${{ steps.cache_ytvid.outputs.cache-hit }}" }
   cache_ythold_hit:        { value: "${{ steps.cache_ythold.outputs.cache-hit }}" }
   cache_volumeboost_hit:   { value: "${{ steps.cache_volumeboost.outputs.cache-hit }}" }
+  cache_nativeshare_hit:   { value: "${{ steps.cache_nativeshare.outputs.cache-hit }}" }
 
 runs:
   using: composite
@@ -180,30 +184,35 @@ runs:
         key: ytvo-${{ inputs.ytvo_commit }}-sdk${{ inputs.sdk_version }}
 
     - uses: actions/cache@v4
+      if: inputs.youspeed_commit != ''
       id: cache_youspeed
       with:
         path: ${{ github.workspace }}/youspeed.deb
         key: youspeed-${{ inputs.youspeed_commit }}-sdk${{ inputs.sdk_version }}
 
     - uses: actions/cache@v4
+      if: inputs.youmute_commit != ''
       id: cache_youmute
       with:
         path: ${{ github.workspace }}/ym.deb
         key: youmute-${{ inputs.youmute_commit }}-sdk${{ inputs.sdk_version }}
 
     - uses: actions/cache@v4
+      if: inputs.youloop_commit != ''
       id: cache_youloop
       with:
         path: ${{ github.workspace }}/youloop.deb
         key: youloop-${{ inputs.youloop_commit }}-sdk${{ inputs.sdk_version }}
 
     - uses: actions/cache@v4
+      if: inputs.alderis_commit != ''
       id: cache_alderis
       with:
         path: ${{ github.workspace }}/alderis.deb
         key: alderis-${{ inputs.alderis_commit }}-sdk${{ inputs.sdk_version }}
 
     - uses: actions/cache@v4
+      if: inputs.youslider_commit != ''
       id: cache_youslider
       with:
         path: ${{ github.workspace }}/youslider.deb
@@ -216,6 +225,7 @@ runs:
         key: youchoose-${{ inputs.youchoose_commit }}-sdk${{ inputs.sdk_version }}
 
     - uses: actions/cache@v4
+      if: inputs.ytsilentvote_commit != ''
       id: cache_ytsilentvote
       with:
         path: ${{ github.workspace }}/ytnovote.deb
@@ -228,24 +238,28 @@ runs:
         key: youshare-${{ inputs.youshare_commit }}-sdk${{ inputs.sdk_version }}
 
     - uses: actions/cache@v4
+      if: inputs.gonerino_commit != ''
       id: cache_gonerino
       with:
         path: ${{ github.workspace }}/gonerino.deb
         key: gonerino-${{ inputs.gonerino_commit }}-sdk${{ inputs.sdk_version }}
 
     - uses: actions/cache@v4
+      if: inputs.ytweaks_commit != ''
       id: cache_ytweaks
       with:
         path: ${{ github.workspace }}/ytweaks.deb
         key: ytweaks-${{ inputs.ytweaks_commit }}-sdk${{ inputs.sdk_version }}
 
     - uses: actions/cache@v4
+      if: inputs.yougetcaption_commit != ''
       id: cache_yougetcaption
       with:
         path: ${{ github.workspace }}/ygc.deb
         key: yougetcaption-${{ inputs.yougetcaption_commit }}-sdk${{ inputs.sdk_version }}
 
     - uses: actions/cache@v4
+      if: inputs.iamyoutube_commit != ''
       id: cache_iamyoutube
       with:
         path: ${{ github.workspace }}/imyt.deb
@@ -266,7 +280,6 @@ runs:
         key: demc-${{ inputs.demc_commit }}-sdk${{ inputs.sdk_version }}
 
     - uses: actions/cache@v4
-      if: inputs.ytvid == 'true'
       id: cache_ytvid
       with:
         path: ${{ github.workspace }}/ytvideoerror.deb
@@ -285,3 +298,10 @@ runs:
       with:
         path: ${{ github.workspace }}/volumeboost.deb
         key: volumeboost-${{ inputs.volumeboost_commit }}-arm64-sdk${{ inputs.sdk_version }}
+        
+    - uses: actions/cache@v4
+      if: inputs.nativeshare == 'true'
+      id: cache_nativeshare
+      with:
+        path: ${{ github.workspace }}/nativeshare.deb
+        key: nativeshare-${{ inputs.nativeshare_commit }}-sdk${{ inputs.sdk_version }}
